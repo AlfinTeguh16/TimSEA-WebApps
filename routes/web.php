@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TalentController;
 use App\Http\Controllers\SuperTeamController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PressReleaseController;
@@ -72,9 +73,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 // Talent Dashboard
 Route::middleware(['role:talent'])->group(function () {
-    Route::get('/talent/dashboard', function () {
-        return view('pages.dashboard.talent.dashboard');
-    })->name('talent.dashboard');
+    Route::get('/talent/dashboard', [TalentController::class, 'index'])->name('talent.dashboard.get');
+    Route::get('/talent/dashboard/detail/{id}', [TalentController::class, 'show'])->name('talent.super-team.show.get');
+    
+    Route::post('/tasks/update-status/{id}', [TalentController::class, 'updateStatus'])->name('tasks.update-status');
 });
 
 // Company Dashboard

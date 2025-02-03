@@ -36,6 +36,14 @@
                     </a>
 
                 @endif
+
+                @if(auth()->user()->role === 'talent')
+                    <a href="{{ route('talent.dashboard.get') }}" 
+                        class="menu-item {{ request()->routeIs(['talent.dashboard.get', 'talent.super-team.show.get']) ? 'bg-primary-500 text-white' : 'bg-white text-neutral-500 hover:bg-neutral-200 hover:text-neutral-700' }}">
+                        <i class="ph-bold ph-house mr-2"></i>Dashboard
+                    </a>
+
+                @endif
             </div>
         </section>
     </div>
