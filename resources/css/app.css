@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.required {
+    color: red;
+  }
+
+
+.dataTables_wrapper .dataTables_paginate {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #3b82f6;
+    color: white !important;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #2563eb;
+}
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+}
